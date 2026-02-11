@@ -26,13 +26,16 @@ Data_11_Statistics_Practice/
 ├── practice_02_assignment.ipynb   # 2회차 실습 과제
 ├── practice_03.ipynb              # 3회차 이론 학습
 ├── practice_03_assignment.ipynb   # 3회차 실습 과제
+├── practice_04.ipynb              # 4회차 이론 학습
+├── practice_04_assignment.ipynb   # 4회차 실습 과제
 ├── data/
 │   └── 차량_연비_데이터(20022022).csv  # 실습 과제 데이터
 ├── docs/
 │   ├── 교안/
 │   │   ├── 통계_이론_1회차.pdf
 │   │   ├── 통계_이론_2회차.pdf
-│   │   └── 통계_이론_3회차.pdf
+│   │   ├── 통계_이론_3회차.pdf
+│   │   └── 통계_이론_4회차.pdf
 │   └── 참고/
 │       ├── scipy_라이브러리_소개.md
 │       ├── statsmodels_라이브러리_소개.md
@@ -40,7 +43,8 @@ Data_11_Statistics_Practice/
 ├── images/
 │   ├── pr_01/                     # 1회차 참고 이미지
 │   ├── pr_02/                     # 2회차 참고 이미지
-│   └── pr_03/                     # 3회차 참고 이미지
+│   ├── pr_03/                     # 3회차 참고 이미지
+│   └── pr_04/                     # 4회차 참고 이미지
 ├── pyproject.toml                 # 의존성 선언
 └── uv.lock                        # 의존성 버전 고정
 ```
@@ -112,11 +116,30 @@ Data_11_Statistics_Practice/
 | 문제 3 | 독립표본 t-검정 (온라인 vs 오프라인) | Welch's t-test, Cohen's d, 검정 선택 |
 | 문제 4 | 대응표본 t-검정 (학습 앱 효과) | 전후 비교, 검정력 분석 |
 
+## 4회차: 비모수 검정, 카이제곱 검정
+
+### 이론 학습 (`practice_04.ipynb`)
+
+| 파트 | 주제 | 핵심 내용 |
+|------|------|----------|
+| Part 1 | 검정 방법 선택 가이드 | 용어표, 의사결정 프레임워크, Q-Q Plot 해석, 가정 검정 (정규성·등분산성) |
+| Part 2 | 비모수 검정 | Wilcoxon signed-rank, Mann-Whitney U, 모수/비모수 비교 |
+| Part 3 | 카이제곱 검정 | 적합도 검정, 독립성 검정, Cramér's V, 기대빈도, Fisher 정확검정 |
+
+### 실습 과제 (`practice_04_assignment.ipynb`)
+
+| 문제 | 주제 | 핵심 개념 |
+|------|------|----------|
+| 문제 1 | 편의점 일일 매출 분석 | 정규성 검정, 단일표본 검정 (t vs Wilcoxon), 효과크기 |
+| 문제 2 | 두 생산라인 제품 무게 비교 | 등분산 검정, 독립표본 검정 (Welch's t vs Mann-Whitney U), 이상치 영향 |
+| 문제 3 | 요일별 고객 방문 패턴 분석 | 카이제곱 적합도 검정, Cohen's w, 표준화 잔차, Monte Carlo |
+| 문제 4 | 연령대별 운동 선호도 조사 | 카이제곱 독립성 검정, Cramér's V, 조정된 잔차, Fisher 정확검정 |
+
 ## 참고 자료 (`docs/`)
 
 | 파일 | 설명 |
 |------|------|
-| `교안/통계_이론_1~3회차.pdf` | 회차별 이론 요약 PDF |
+| `교안/통계_이론_1~4회차.pdf` | 회차별 이론 요약 PDF |
 | `참고/scipy_라이브러리_소개.md` | SciPy 공식 문서 링크 및 주요 모듈 소개 |
 | `참고/statsmodels_라이브러리_소개.md` | statsmodels 라이브러리 소개 및 활용 가이드 |
 | `참고/시각화_가이드_문서.ipynb` | 변수 개수 x 목적별 차트 선택 가이드 |
