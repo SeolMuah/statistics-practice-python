@@ -46,12 +46,12 @@ pip install pingouin
 | 비모수 검정 | `pg.mwu()`, `pg.wilcoxon()`, `pg.kruskal()`, `pg.friedman()` |
 | 사후검정 | `pg.pairwise_tests()`, `pg.pairwise_tukey()`, `pg.pairwise_gameshowell()` |
 | 상관분석 | `pg.corr()`, `pg.partial_corr()`, `pg.pcorr()` |
+| 카이제곱 독립성 검정 | `pg.chi2_independence()`|
 | 효과 크기 | `pg.compute_effsize()`, `pg.compute_effsize_from_t()` |
 | 정규성·구형성 | `pg.normality()`, `pg.sphericity()`, `pg.homoscedasticity()` |
 | 베이즈 통계 | 대부분의 검정 함수에 `BF10` (베이즈 팩터) 내장 |
 | 신뢰구간 | `pg.compute_bootci()` (부트스트랩 CI) |
 | 검정력 | `pg.power_ttest()`, `pg.power_anova()`, `pg.power_chi2()` |
-
 ---
 
 ## 통계 실습에서 자주 쓰는 기능
