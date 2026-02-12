@@ -13,7 +13,7 @@ uv sync
 
 `uv sync`는 `pyproject.toml`(의존성 선언)과 `uv.lock`(버전 고정)을 읽어서 정확한 버전을 설치하고 동일한 파이썬 환경을 갖게 됩니다.
 
-> `uv add jupyter pandas matplotlib seaborn scipy scikit-learn`은 프로젝트 초기 구성 시 사용한 명령입니다.
+> `uv add jupyter pandas matplotlib seaborn scipy scikit-learn statsmodels pingouin plotly squarify`는 프로젝트 초기 구성 시 사용한 명령입니다.
 > 학생 여러분은 **`uv sync`만 실행하면** 됩니다.
 
 ## 프로젝트 구조
@@ -28,6 +28,8 @@ Data_11_Statistics_Practice/
 ├── practice_03_assignment.ipynb   # 3회차 실습 과제
 ├── practice_04.ipynb              # 4회차 이론 학습
 ├── practice_04_assignment.ipynb   # 4회차 실습 과제
+├── practice_05.ipynb              # 5회차 이론 학습
+├── practice_05_assignment.ipynb   # 5회차 실습 과제
 ├── data/
 │   └── 차량_연비_데이터(20022022).csv  # 실습 과제 데이터
 ├── docs/
@@ -35,16 +37,19 @@ Data_11_Statistics_Practice/
 │   │   ├── 통계_이론_1회차.pdf
 │   │   ├── 통계_이론_2회차.pdf
 │   │   ├── 통계_이론_3회차.pdf
-│   │   └── 통계_이론_4회차.pdf
+│   │   ├── 통계_이론_4회차.pdf
+│   │   └── 통계_이론_5회차.pdf
 │   └── 참고/
 │       ├── scipy_라이브러리_소개.md
 │       ├── statsmodels_라이브러리_소개.md
+│       ├── pingouin_라이브러리_소개.md
 │       └── 시각화_가이드_문서.ipynb
 ├── images/
 │   ├── pr_01/                     # 1회차 참고 이미지
 │   ├── pr_02/                     # 2회차 참고 이미지
 │   ├── pr_03/                     # 3회차 참고 이미지
-│   └── pr_04/                     # 4회차 참고 이미지
+│   ├── pr_04/                     # 4회차 참고 이미지
+│   └── pr_05/                     # 5회차 참고 이미지
 ├── pyproject.toml                 # 의존성 선언
 └── uv.lock                        # 의존성 버전 고정
 ```
@@ -135,13 +140,33 @@ Data_11_Statistics_Practice/
 | 문제 3 | 요일별 고객 방문 패턴 분석 | 카이제곱 적합도 검정, Cohen's w, 표준화 잔차, Monte Carlo |
 | 문제 4 | 연령대별 운동 선호도 조사 | 카이제곱 독립성 검정, Cramér's V, 조정된 잔차, Fisher 정확검정 |
 
+## 5회차: 분산분석, 상관분석, A/B 테스트
+
+### 이론 학습 (`practice_05.ipynb`)
+
+| 파트 | 주제 | 핵심 내용 |
+|------|------|----------|
+| Part 1 | 분산분석 (ANOVA) | One-way ANOVA, Welch's ANOVA, Kruskal-Wallis, 사후검정, 효과크기 |
+| Part 2 | 상관분석 | Pearson, Spearman, 산점도, 히트맵, 가설검정, 상관 vs 인과 |
+| Part 3 | A/B 테스트 | 실험 설계, 표본 크기 산정, 검정력 분석, 전환율 비교 |
+
+### 실습 과제 (`practice_05_assignment.ipynb`)
+
+| 문제 | 주제 | 핵심 개념 |
+|------|------|----------|
+| 문제 1 | 3개 공장의 배터리 수명 비교 (ANOVA) | 가정 검정 → 검정 선택 → 사후검정 → 효과크기 |
+| 문제 2 | 직원 데이터 상관분석 | Pearson vs Spearman, 산점도, 상관 vs 인과 |
+| 문제 3 | 앱 UI 변경 A/B 테스트 (전환율) | 실험 설계 → 표본 크기 산정 → 검정 → 의사결정 |
+| 문제 4 | 학습 앱 A/B 테스트 (연속형 지표) | 연속형 A/B 테스트, CLT, 모수 vs 비모수 |
+
 ## 참고 자료 (`docs/`)
 
 | 파일 | 설명 |
 |------|------|
-| `교안/통계_이론_1~4회차.pdf` | 회차별 이론 요약 PDF |
+| `교안/통계_이론_1~5회차.pdf` | 회차별 이론 요약 PDF |
 | `참고/scipy_라이브러리_소개.md` | SciPy 공식 문서 링크 및 주요 모듈 소개 |
 | `참고/statsmodels_라이브러리_소개.md` | statsmodels 라이브러리 소개 및 활용 가이드 |
+| `참고/pingouin_라이브러리_소개.md` | pingouin 라이브러리 소개 및 활용 가이드 |
 | `참고/시각화_가이드_문서.ipynb` | 변수 개수 x 목적별 차트 선택 가이드 |
 
 ## 실습 순서
@@ -149,3 +174,52 @@ Data_11_Statistics_Practice/
 1. `practice_0X.ipynb`로 이론 학습
 2. `practice_0X_assignment.ipynb`에서 `TODO` 부분을 직접 작성하는 과제
     - 각 셀을 실행하여 결과 확인 (도전 과제는 검증 코드 포함)
+
+## 주의사항
+
+`git pull`이 충돌로 안 되는 경우, 아래 명령으로 강제 초기화할 수 있습니다.
+
+```bash
+git fetch origin
+git reset --hard origin/main
+```
+
+> **제가 드린 파일 명 그대로 직접 작업하지 마세요.** 반드시 자기 이름의 별도 파일로 복사하여 작업하고, 이곳 폴더에서 `git add`를 하지 않도록 주의해 주세요.
+
+## 이전 버전 확인 및 다운로드
+
+아래 명령어를 입력하면 지금까지의 실습 기록을 볼 수 있습니다.
+
+```bash
+git log --oneline
+```
+
+> `git log --oneline`: 커밋(저장) 기록을 한 줄씩 간략하게 표시하는 명령어
+
+```
+e54ce48 1-2회차: 과제 풀이 코드 업데이트
+2542d9d 3회차: 실습 코드 업데이트
+73f8329 3회차: 수업 실습 코드 업데이트
+ead1857 3회차: 실습 노트북, 과제, 교안 및 참고자료 추가
+118eaf6 2회차: 실습 노트북 업데이트
+b549905 2회차: 실습 노트북 추가
+09a7de8 1회차: 수업 실습 코드 업데이트
+6042c1f 1회차: 프로젝트 초기 구성 (이론, 과제, 데이터, 교안)
+```
+
+왼쪽 7자리(`e54ce48` 등)가 **커밋 해시(커밋 ID)**입니다. 다음 단계에서 이 값을 사용합니다.
+
+### 2. 원하는 시점의 파일 추출
+
+```bash
+git archive 커밋해시 -o 파일이름.zip
+```
+
+> `git archive`: 특정 시점의 파일들을 압축 파일로 만들어주는 명령어
+> `-o 파일이름.zip`: 저장할 zip 파일 이름 지정
+
+예시) 2회차 실습이 추가된 시점을 보고 싶다면:
+
+```bash
+git archive b549905 -o 2회차.zip
+```
